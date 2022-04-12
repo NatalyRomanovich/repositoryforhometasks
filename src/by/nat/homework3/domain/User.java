@@ -1,6 +1,5 @@
 package by.nat.homework3.domain;
 
-
 import java.util.List;
 import java.util.Objects;
 

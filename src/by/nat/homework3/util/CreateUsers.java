@@ -24,42 +24,45 @@ public class CreateUsers {
     //select the number of friends of each user randomly in a given range from minimum to maximum
 
     public static int getNumberOfFriends() {
+
         int max = MAX_NUMBER_OF_FRIENDS, min = MIN_NUMBER_OF_FRIENDS;
-        int numberOfFriends = (int) (Math.random() * ((max - min) + 1)) + min;
-        return numberOfFriends;
+        return (int) (Math.random() * ((max - min) + 1)) + min;
     }
     //select a random index to create a list of friends in random order
 
     public static int getRandomIndex() {
-        int randomIndex = (int) (Math.random() * (NAME_OF_USERS.length));
-        return randomIndex;
+
+        return (int) (Math.random() * (NAME_OF_USERS.length));
     }
 
     //search the index in of user with given name in the data array NAME_OF_USERS
 
-    public static int searchIndexOfFirstUser(String userName) {
+    public static int searchIndexOfFirstUser(String personsFirstName) {
+
         List<String> namesOfUsers = Arrays.asList(NAME_OF_USERS);
-        return namesOfUsers.indexOf(userName);
+        return namesOfUsers.indexOf(personsFirstName);
     }
     //This method creates user with given name and with him friendList
 
-    public static User getUser(String userFirstName) {
+    public static User getUser(String personsFirstName) {
 
-        List<User> listOfFriends = getFriends(FIRST_PERSONS_NAME, NUMBER_OF_LEVEL);
+        List<User> listOfFriendsFirstPerson = getFriends(FIRST_PERSONS_NAME, NUMBER_OF_LEVEL);
 
-        int index = searchIndexOfFirstUser(userFirstName);
-        User user = new User(index + 1, userFirstName, SURNAME_OF_USERS[index], listOfFriends);
-        return user;
+        int index = searchIndexOfFirstUser(personsFirstName);
+        User firstUser = new User(index + 1, personsFirstName, SURNAME_OF_USERS[index], listOfFriendsFirstPerson);
+
+        return firstUser;
     }
     //These methods help to create user with given name and with him friendList
 
     public static User getUser(String userName, int countLevel) {
 
-        User user = new User(userName, getFriends(userName, countLevel - 1));
-        return user;
+        User otherUser = new User(userName, getFriends(userName, countLevel - 1));
+        return otherUser;
     }
 
     public static List getFriends(String userName, int countLevel) {
+
         List<User> listOfFriends = new ArrayList<>();
 
         if (countLevel > 0) {
@@ -83,46 +86,48 @@ public class CreateUsers {
 
         boolean result = false;
 
-        for (int i = 0; i < listOfFriends.size(); i++) {
+        for (User friend : listOfFriends) {
 
-            if (listOfFriends.get(i).getName().equals(userName.getName())) {
+            if (friend.getName().equals(userName.getName())) {
                 result = true;
+                break;
             }
         }
         return result;
     }
 
     //This method shows information about the user with the given name
-    public static void showUsers(User userFirstName) {
-        System.out.println("\n" + userFirstName.getName() + "'s friends:" + "\n" + "--->");
+    public static void showUsers(User personFirstName) {
+        System.out.println("\n" + personFirstName.getName() + "'s friends:" + "\n" + "--->");
     }
 
     //This method shows information about the friends of the user with the given name
 
     public static void showUsers(User userName, int countLevel) {
 
-        List<User> nameFriendsForShow = new ArrayList<>(userName.getFriends());
+        List<User> namesFriendsForShow = new ArrayList<>(userName.getFriends());
 
-        for (int i = 0; i < nameFriendsForShow.size(); i++) {
+        for (User friend : namesFriendsForShow) {
 
-            System.out.println(nameFriendsForShow.get(i).getName());
+            System.out.println(friend.getName());
         }
         System.out.println("--->");
 
-        if (countLevel > 0) {
 
-            for (int j = 0; j < nameFriendsForShow.size(); j++) {
+        if (countLevel-- > 0) {
+            for (int j = 0; j < namesFriendsForShow.size(); j++) {
 
-                System.out.println(nameFriendsForShow.get(j).getName() + "'s friends:");
-                showUsers(nameFriendsForShow.get(j), countLevel - 1);
+                System.out.println(namesFriendsForShow.get(j).getName() + "'s friends:");
+                showUsers(namesFriendsForShow.get(j), countLevel - 1);
             }
         }
     }
 
+
     //This method shows information about user and his/her friends and their friends in the given form
-    public static void showAllFriends(User userName, int countLevel) {
-        showUsers(userName);
-        showUsers(userName, countLevel);
+    public static void showAllFriends(User firstUser, int countLevel) {
+        showUsers(firstUser);
+        showUsers(firstUser, countLevel);
     }
 }
 

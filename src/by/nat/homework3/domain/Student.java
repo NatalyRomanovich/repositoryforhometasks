@@ -74,4 +74,3 @@ public class Student implements Comparator<Student>, Comparable<Student> {
         return this.getStudentSurName().compareTo(o.studentSurName);
     }
 }
-

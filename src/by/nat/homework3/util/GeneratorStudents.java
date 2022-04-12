@@ -12,11 +12,13 @@ public class GeneratorStudents implements StudentInformation {
 
     public static Set getStudent() {
         TreeSet<Student> setOfStudents = new TreeSet<>();
+
         int i = 0;
-        while (setOfStudents.size() < STUDETS_NAMES.length) {
-            i++;
-            int randomIndex = (int) (Math.random() * (STUDETS_NAMES.length));
-            Student student = new Student(i + 1, STUDETS_SURNAMES[randomIndex], STUDETS_NAMES[randomIndex]);
+
+        while (setOfStudents.size() < STUDENTS_NAMES.length) {
+
+            int randomIndex = (int) (Math.random() * (STUDENTS_NAMES.length));
+            Student student = new Student(++i, STUDENTS_SURNAMES[randomIndex], STUDENTS_NAMES[randomIndex]);
             setOfStudents.add(student);
         }
         return setOfStudents;
@@ -26,7 +28,7 @@ public class GeneratorStudents implements StudentInformation {
 
         List<Student> arrayForCheckEvenElements = new ArrayList<>(setOfStudents);
 
-        for (int i = 0; i < STUDETS_NAMES.length; i++) {
+        for (int i = 0; i < STUDENTS_NAMES.length; i++) {
             int id = arrayForCheckEvenElements.get(i).getId();
 
             //parity check

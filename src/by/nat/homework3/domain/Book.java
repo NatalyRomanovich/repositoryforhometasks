@@ -139,5 +139,4 @@ public class Book implements Comparable<Book> {
         }
         return getAuthorsMiddleName().compareTo(b.getAuthorsMiddleName());
     }
-
 }

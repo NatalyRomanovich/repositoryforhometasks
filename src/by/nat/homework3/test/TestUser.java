@@ -1,12 +1,9 @@
 package by.nat.homework3.test;
 
-
 import by.nat.homework3.domain.User;
 import by.nat.homework3.util.CreateUsers;
 
-
 public class TestUser {
-
 
     public static void main(String[] args) {
 

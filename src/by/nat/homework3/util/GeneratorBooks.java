@@ -3,11 +3,7 @@ package by.nat.homework3.util;
 import by.nat.homework3.domain.Book;
 import by.nat.homework3.domain.BookInformation;
 
-import java.util.List;
-import java.util.LinkedList;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Collections;
+import java.util.*;
 
 public class GeneratorBooks implements BookInformation {
 
@@ -25,29 +21,33 @@ public class GeneratorBooks implements BookInformation {
                 AUTHORS_NAMES[randomIndex], AUTHORS_MIDDLE_NAME[randomIndex], BOOK_DESCRIPTION[randomIndex]);
     }
 
-    // generate list of book without repeating elements
+    // generate list of books without repeating elements
     public static List getListOfBooks(int listSize) {
         List<Book> listOfBooks = new LinkedList<>();
 
         while (listOfBooks.size() < listSize) {
-            Book book = getRandomBook();
-            if (!listOfBooks.contains(book)) { //check that there are no duplicate books
-                listOfBooks.add(book);
+
+            Book newBook = getRandomBook();
+
+            if (!listOfBooks.contains(newBook)) { //check that there are no duplicate books
+                listOfBooks.add(newBook);
             }
         }
         return listOfBooks;
     }
 
     // generate list of book with repeating elements
+
     public static List getListOfBooks(int setSize, int countRepeatingElements) {
-        List<Book> listOfBooks = new LinkedList<>();
 
-        int randomIndex = (int) (Math.random() * (setSize));
+        List<Book> listOfBooks = new ArrayList<>(setSize);
 
-        while (setSize > (listOfBooks.size() - countRepeatingElements)) { //generate repeating books
+        while (setSize > (listOfBooks.size() - countRepeatingElements)) {
             listOfBooks.add(getRandomBook());
         }
-        while (listOfBooks.size() < setSize) {                         //generate others books
+        int randomIndex = (int) (Math.random() * (setSize));
+
+        while (listOfBooks.size() < setSize) { //generate repeating books with a given number of repetitions
             listOfBooks.add(listOfBooks.get(randomIndex));
         }
         return listOfBooks;
@@ -61,20 +61,26 @@ public class GeneratorBooks implements BookInformation {
 
     public static boolean isVowel(char firstLetter) {
         char[] vowels = new char[]{'A', 'E', 'I', 'O', 'U', 'Y'};
-        firstLetter = Character.toUpperCase(firstLetter);  //check that the title of the book starts with a vowel
-        for (char a : vowels) {
-            if (firstLetter == a)
-                return true;
+        firstLetter = Character.toUpperCase(firstLetter);
+        boolean isVowel = false;
+        for (char vowel : vowels) {               //check that the title of the book starts with a vowel
+            if (firstLetter == vowel) {
+                isVowel = true;
+                break;
+            }
+
         }
-        return false;
+        return isVowel;
     }
 
     public static Set titleBooksStartedWithVowel(Set<Book> setOfAllBooks) {
 
         Set<Book> setOfSortedBooks = new HashSet<>();
+
         for (Book book : setOfAllBooks) {
             char[] bookName = book.getTitleOfBook().toCharArray();
             char firstLetter = bookName[PLACE_OF_CHECKED_LETTER];
+
             if (isVowel(firstLetter)) {
                 setOfSortedBooks.add(book);
             }
@@ -83,7 +89,7 @@ public class GeneratorBooks implements BookInformation {
     }
 
     public static void sorting(List<Book> listOfBooks, int descriptionCompareTo) {
-        GeneratorBooks.compareType = descriptionCompareTo;
+        compareType = descriptionCompareTo;
         Collections.sort(listOfBooks);
     }
 }

@@ -13,12 +13,12 @@ public class TestStudent implements StudentInformation {
 
         //Generate a TreeSet of students in random order
         TreeSet<Student> setOfStudents = (TreeSet<Student>) GeneratorStudents.getStudent();
-        System.out.println("The set of all students: ");
+        System.out.println("The set of all students: "+ "\n");
         OutputOnDisplay.showObject(setOfStudents);
 
         //Remove students with even id
         GeneratorStudents.removingEvenElements(setOfStudents);
-        System.out.println("The set of students with even id: ");
+        System.out.println("\n"+ "The set of students with even id: "+ "\n");
         OutputOnDisplay.showObject(setOfStudents);
     }
 }
