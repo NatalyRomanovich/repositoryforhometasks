@@ -3,7 +3,12 @@ package by.nat.homework3.util;
 import by.nat.homework3.domain.Book;
 import by.nat.homework3.domain.BookInformation;
 
-import java.util.*;
+import java.util.Set;
+import java.util.List;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Collections;
+import java.util.ArrayList;
 
 public class GeneratorBooks implements BookInformation {
 
