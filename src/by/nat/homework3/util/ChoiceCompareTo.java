@@ -18,3 +18,4 @@ public enum ChoiceCompareTo {
         return descriptionOfMethod;
     }
 }
+

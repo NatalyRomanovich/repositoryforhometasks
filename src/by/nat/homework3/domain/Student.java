@@ -9,7 +9,6 @@ public class Student implements Comparator<Student>, Comparable<Student> {
     private String studentSurName;
     private String studentName;
 
-
     public Student() {
     }
 
@@ -17,7 +16,6 @@ public class Student implements Comparator<Student>, Comparable<Student> {
         this.id = id;
         this.studentSurName = studentSurName;
         this.studentName = studentName;
-
     }
 
     public Integer getId() {
@@ -43,7 +41,6 @@ public class Student implements Comparator<Student>, Comparable<Student> {
     public void setStudentName(String studentName) {
         this.studentName = studentName;
     }
-
 
     @Override
     public int compare(Student o1, Student o2) {

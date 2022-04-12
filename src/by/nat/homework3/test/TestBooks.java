@@ -10,7 +10,6 @@ import java.util.Set;
 
 public class TestBooks {
 
-
     public static void main(String[] args) {
         //Generate a list of 20 books in random order without repeating elements and show all books
         int listSize = GeneratorBooks.LIST_SIZE;

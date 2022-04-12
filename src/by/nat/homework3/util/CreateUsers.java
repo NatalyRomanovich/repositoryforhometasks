@@ -39,8 +39,7 @@ public class CreateUsers {
 
     public static int searchIndexOfFirstUser(String userName) {
         List<String> namesOfUsers = Arrays.asList(NAME_OF_USERS);
-        int indexOfFirstUser = namesOfUsers.indexOf(userName);
-        return indexOfFirstUser;
+        return namesOfUsers.indexOf(userName);
     }
     //This method creates user with given name and with him friendList
 
@@ -55,6 +54,7 @@ public class CreateUsers {
     //These methods help to create user with given name and with him friendList
 
     public static User getUser(String userName, int countLevel) {
+
         User user = new User(userName, getFriends(userName, countLevel - 1));
         return user;
     }
@@ -94,7 +94,7 @@ public class CreateUsers {
 
     //This method shows information about the user with the given name
     public static void showUsers(User userFirstName) {
-        System.out.println(userFirstName.getName() + "'s friends:" + "\n" + "--->");
+        System.out.println("\n" + userFirstName.getName() + "'s friends:" + "\n" + "--->");
     }
 
     //This method shows information about the friends of the user with the given name
@@ -109,7 +109,7 @@ public class CreateUsers {
         }
         System.out.println("--->");
 
-        if (countLevel > 0 ) {
+        if (countLevel > 0) {
 
             for (int j = 0; j < nameFriendsForShow.size(); j++) {
 
@@ -122,7 +122,7 @@ public class CreateUsers {
     //This method shows information about user and his/her friends and their friends in the given form
     public static void showAllFriends(User userName, int countLevel) {
         showUsers(userName);
-        showUsers(userName,countLevel);
+        showUsers(userName, countLevel);
     }
 }
 

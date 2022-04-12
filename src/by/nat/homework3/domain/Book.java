@@ -5,7 +5,6 @@ import by.nat.homework3.util.GeneratorBooks;
 
 import java.util.Objects;
 
-
 public class Book implements Comparable<Book> {
 
     private String titleOfBook;

@@ -5,7 +5,6 @@ import java.util.Set;
 
 public class OutputOnDisplay {
 
-
     //<T> - the type of elements in this collection, T extends Object;
 
     public static <T> void showObject(List<T> list) {

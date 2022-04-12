@@ -29,7 +29,6 @@ public interface BookInformation {
 
     String[] BOOK_DESCRIPTION = getRandomBookDescription(GeneratorBooks.LIST_SIZE);
 
-
     private static String getRandomString(int length) {
         String str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ";
         Random random = new Random();

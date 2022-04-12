@@ -3,7 +3,7 @@ package by.nat.homework3.test;
 
 import by.nat.homework3.domain.User;
 import by.nat.homework3.util.CreateUsers;
-import by.nat.homework3.util.OtherCreateUsers;
+
 
 public class TestUser {
 

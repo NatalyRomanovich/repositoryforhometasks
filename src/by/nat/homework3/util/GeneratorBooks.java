@@ -81,10 +81,9 @@ public class GeneratorBooks implements BookInformation {
         }
         return setOfSortedBooks;
     }
+
     public static void sorting(List<Book> listOfBooks, int descriptionCompareTo) {
         GeneratorBooks.compareType = descriptionCompareTo;
         Collections.sort(listOfBooks);
     }
-
-
 }

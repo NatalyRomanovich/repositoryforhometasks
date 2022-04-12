@@ -1,5 +1,6 @@
 package by.nat.homework3.domain;
 
+
 import java.util.List;
 import java.util.Objects;
 
@@ -27,6 +28,7 @@ public class User {
         this.surname = surname;
 
     }
+
     public User(Integer id, String name, String surname, List<User> friends) {
         this.id = id;
         this.name = name;

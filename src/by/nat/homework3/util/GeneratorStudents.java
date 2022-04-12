@@ -16,13 +16,14 @@ public class GeneratorStudents implements StudentInformation {
         while (setOfStudents.size() < STUDETS_NAMES.length) {
             i++;
             int randomIndex = (int) (Math.random() * (STUDETS_NAMES.length));
-            Student student = new Student(i + 1, STUDETS_SURNAMES[randomIndex],STUDETS_NAMES[randomIndex]);
+            Student student = new Student(i + 1, STUDETS_SURNAMES[randomIndex], STUDETS_NAMES[randomIndex]);
             setOfStudents.add(student);
         }
         return setOfStudents;
     }
 
     public static void removingEvenElements(Set<Student> setOfStudents) {
+
         List<Student> arrayForCheckEvenElements = new ArrayList<>(setOfStudents);
 
         for (int i = 0; i < STUDETS_NAMES.length; i++) {
