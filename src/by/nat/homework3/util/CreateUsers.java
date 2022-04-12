@@ -20,7 +20,6 @@ public class CreateUsers {
 
     public static final int MAX_NUMBER_OF_FRIENDS = 3, MIN_NUMBER_OF_FRIENDS = 2;
 
-
     //select the number of friends of each user randomly in a given range from minimum to maximum
 
     public static int getNumberOfFriends() {
@@ -84,19 +83,20 @@ public class CreateUsers {
 
     public static boolean isInclude(List<User> listOfFriends, User userName) {
 
-        boolean result = false;
+        boolean isInclude = false;
 
         for (User friend : listOfFriends) {
 
             if (friend.getName().equals(userName.getName())) {
-                result = true;
+                isInclude = true;
                 break;
             }
         }
-        return result;
+        return isInclude;
     }
 
     //This method shows information about the user with the given name
+
     public static void showUsers(User personFirstName) {
         System.out.println("\n" + personFirstName.getName() + "'s friends:" + "\n" + "--->");
     }
@@ -113,7 +113,6 @@ public class CreateUsers {
         }
         System.out.println("--->");
 
-
         if (countLevel-- > 0) {
             for (int j = 0; j < namesFriendsForShow.size(); j++) {
 
@@ -123,8 +122,8 @@ public class CreateUsers {
         }
     }
 
-
     //This method shows information about user and his/her friends and their friends in the given form
+
     public static void showAllFriends(User firstUser, int countLevel) {
         showUsers(firstUser);
         showUsers(firstUser, countLevel);
