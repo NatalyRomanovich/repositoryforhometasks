@@ -41,7 +41,7 @@ public class GeneratorBooks implements BookInformation {
         return listOfBooks;
     }
 
-    // generate list of book with repeating elements
+    // generate list of books with repeating elements
 
     public static List getListOfBooks(int setSize, int countRepeatingElements) {
 
