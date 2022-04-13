@@ -16,9 +16,9 @@ public class CreateUsers {
 
     public static final String FIRST_PERSONS_NAME = "Slava";
 
-    public static final Integer NUMBER_OF_LEVEL = 2;
+    public static final Integer NUMBER_OF_LEVEL = 5;
 
-    public static final int MAX_NUMBER_OF_FRIENDS = 2, MIN_NUMBER_OF_FRIENDS = 2;
+    public static final int MAX_NUMBER_OF_FRIENDS = 3, MIN_NUMBER_OF_FRIENDS = 2;
 
     //select the number of friends of each user randomly in a given range from minimum to maximum
 
