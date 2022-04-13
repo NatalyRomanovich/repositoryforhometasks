@@ -16,9 +16,9 @@ public class CreateUsers {
 
     public static final String FIRST_PERSONS_NAME = "Slava";
 
-    public static final Integer NUMBER_OF_LEVEL = 5;
+    public static final Integer NUMBER_OF_LEVEL = 2;
 
-    public static final int MAX_NUMBER_OF_FRIENDS = 3, MIN_NUMBER_OF_FRIENDS = 2;
+    public static final int MAX_NUMBER_OF_FRIENDS = 2, MIN_NUMBER_OF_FRIENDS = 2;
 
     //select the number of friends of each user randomly in a given range from minimum to maximum
 
@@ -41,22 +41,12 @@ public class CreateUsers {
         List<String> namesOfUsers = Arrays.asList(NAME_OF_USERS);
         return namesOfUsers.indexOf(personsFirstName);
     }
-    //This method creates user with given name and with him friendList
 
-    public static User getUser(String personsFirstName) {
-
-        List<User> listOfFriendsFirstPerson = getFriends(FIRST_PERSONS_NAME, NUMBER_OF_LEVEL);
-
-        int index = searchIndexOfFirstUser(personsFirstName);
-        User firstUser = new User(index + 1, personsFirstName, SURNAME_OF_USERS[index], listOfFriendsFirstPerson);
-
-        return firstUser;
-    }
     //These methods help to create user with given name and with him friendList
 
     public static User getUser(String userName, int countLevel) {
 
-        User otherUser = new User(userName, getFriends(userName, countLevel - 1));
+        User otherUser = new User(userName, getFriends(userName, countLevel));
         return otherUser;
     }
 
@@ -68,7 +58,7 @@ public class CreateUsers {
 
             while (listOfFriends.size() < getNumberOfFriends()) {
 
-                User friend = getUser(NAME_OF_USERS[getRandomIndex()], countLevel);
+                User friend = getUser(NAME_OF_USERS[getRandomIndex()], countLevel - 1);
 
                 if (!friend.getName().equals(userName) && !isInclude(listOfFriends, friend)) {
 
