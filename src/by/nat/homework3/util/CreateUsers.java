@@ -36,7 +36,7 @@ public class CreateUsers {
 
     //search the index in of user with given name in the data array NAME_OF_USERS
 
-    public static int searchIndexOfFirstUser(String personsFirstName) {
+    public static int searchIndexOfUser(String personsFirstName) {
 
         List<String> namesOfUsers = Arrays.asList(NAME_OF_USERS);
         return namesOfUsers.indexOf(personsFirstName);
@@ -46,7 +46,8 @@ public class CreateUsers {
 
     public static User getUser(String userName, int countLevel) {
 
-        User otherUser = new User(userName, getFriends(userName, countLevel));
+        int index = searchIndexOfUser(userName);
+        User otherUser = new User(index + 1, userName, SURNAME_OF_USERS[index], getFriends(userName, countLevel));
         return otherUser;
     }
 
