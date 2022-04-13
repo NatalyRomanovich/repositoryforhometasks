@@ -47,8 +47,8 @@ public class CreateUsers {
     public static User getUser(String userName, int countLevel) {
 
         int index = searchIndexOfUser(userName);
-        User otherUser = new User(index + 1, userName, SURNAME_OF_USERS[index], getFriends(userName, countLevel));
-        return otherUser;
+        User ourUser = new User(index + 1, userName, SURNAME_OF_USERS[index], getFriends(userName, countLevel));
+        return ourUser;
     }
 
     public static List getFriends(String userName, int countLevel) {
