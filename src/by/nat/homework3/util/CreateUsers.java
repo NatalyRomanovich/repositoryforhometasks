@@ -47,11 +47,11 @@ public class CreateUsers {
     public static User getUser(String userName, int countLevel) {
 
         int index = searchIndexOfUser(userName);
-        User ourUser = new User(index + 1, userName, SURNAME_OF_USERS[index], getFriends(userName, countLevel));
+        User ourUser = new User(index + 1, userName, SURNAME_OF_USERS[index], getUserFriends(userName, countLevel));
         return ourUser;
     }
 
-    public static List getFriends(String userName, int countLevel) {
+    public static List getUserFriends(String userName, int countLevel) {
 
         List<User> listOfFriends = new ArrayList<>();
 
