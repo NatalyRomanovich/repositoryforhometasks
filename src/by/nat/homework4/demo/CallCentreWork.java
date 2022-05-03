@@ -17,7 +17,7 @@ public class CallCentreWork {
             new ArrayBlockingQueue<>(Information.getInformation
                     (CreateCallCentre.FILE_NAME_CALL_CENTRE, CreateCallCentre.OPERATORS_NUMBER));
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         CallCentre callCentre = CreateCallCentre.createCallCentre();
 
         System.out.println("Call center starts working");
