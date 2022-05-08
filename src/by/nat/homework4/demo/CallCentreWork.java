@@ -12,7 +12,6 @@ import java.util.concurrent.BlockingQueue;
 
 
 public class CallCentreWork {
-
  
     public static void main(String[] args) {
         CallCentre callCentre = CreateCallCentre.createCallCentre();
