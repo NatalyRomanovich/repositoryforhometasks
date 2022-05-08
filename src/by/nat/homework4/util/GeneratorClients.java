@@ -22,11 +22,11 @@ public class GeneratorClients {
         return clientList;
     }
 
-    static Client createClient(int operatorsNumber) {
+    static Client createClient(int clientsNumber) {
 
         int resolutionTime = Information.getRandomValue(FILE_NAME_CLIENTS, MAX_RESOLUTION_TIME, MIN_RESOLUTION_TIME);
 
-        Client client = new Client((++operatorsNumber), resolutionTime);
+        Client client = new Client((++clientsNumber), resolutionTime);
 
         return client;
     }
