@@ -20,8 +20,7 @@ public class CallCentre implements Runnable {
     public CallCentre() {
     }
 
-    public CallCentre(int capacity, int operatorsNumber, List<Operator> operators, List<Client> clients,
-                      BlockingQueue<Client> clientsQueue) {
+    public CallCentre(int capacity, int operatorsNumber, List<Operator> operators, List<Client> clients) {
 
         this.capacity = capacity;
         this.operatorsNumber = operatorsNumber;
