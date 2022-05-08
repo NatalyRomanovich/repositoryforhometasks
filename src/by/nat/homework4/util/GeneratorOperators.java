@@ -1,6 +1,5 @@
 package by.nat.homework4.util;
 
-import by.nat.homework4.demo.CallCentreWork;
 import by.nat.homework4.domain.Operator;
 
 import java.util.ArrayList;
@@ -29,7 +28,6 @@ public class GeneratorOperators {
     static Operator createOperator(int operatorsIndex) {
 
         String[] operatorsNamesList = Information.getInformation(OPERATORS_NAMES_KEY);
-
         Operator operator = new Operator(operatorsNamesList[operatorsIndex], isOperatorSkilled());
 
         return operator;
@@ -52,5 +50,4 @@ public class GeneratorOperators {
         }
         return skill;
     }
-
 }
