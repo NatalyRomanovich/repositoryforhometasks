@@ -1,12 +1,12 @@
 package by.nat.homework4.domain;
 
-import by.nat.homework4.demo.CallCentreWork;
 import by.nat.homework4.util.CreateCallCentre;
 import by.nat.homework4.util.GeneratorClients;
 import by.nat.homework4.util.Information;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 public class CallCentre implements Runnable {
@@ -15,7 +15,8 @@ public class CallCentre implements Runnable {
     private int operatorsNumber;
     private List<Operator> operators;
     private List<Client> clients;
-    private BlockingQueue<Client> clientsQueue;
+    private static BlockingQueue<Client> clientsQueue;
+
 
     public CallCentre() {
     }
@@ -29,6 +30,7 @@ public class CallCentre implements Runnable {
         this.clientsQueue = new ArrayBlockingQueue<>(Information.getInformation
                 (CreateCallCentre.FILE_NAME_CALL_CENTRE, CreateCallCentre.OPERATORS_NUMBER));
     }
+
 
     public int getCapacity() {
         return capacity;
@@ -62,7 +64,7 @@ public class CallCentre implements Runnable {
         this.clients = clients;
     }
 
-    public BlockingQueue<Client> getClientsQueue() {
+    public static BlockingQueue<Client> getClientsQueue() {
         return clientsQueue;
     }
 
