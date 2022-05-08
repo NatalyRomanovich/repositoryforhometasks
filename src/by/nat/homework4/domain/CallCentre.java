@@ -15,7 +15,7 @@ public class CallCentre implements Runnable {
     private int operatorsNumber;
     private List<Operator> operators;
     private List<Client> clients;
-    private BlockingQueue<Client> clientsQueue = CallCentreWork.clientsQueue;
+    private BlockingQueue<Client> clientsQueue;
 
     public CallCentre() {
     }
@@ -27,7 +27,8 @@ public class CallCentre implements Runnable {
         this.operatorsNumber = operatorsNumber;
         this.operators = operators;
         this.clients = clients;
-        this.clientsQueue = clientsQueue;
+        this.clientsQueue = new ArrayBlockingQueue<>(Information.getInformation
+                (CreateCallCentre.FILE_NAME_CALL_CENTRE, CreateCallCentre.OPERATORS_NUMBER));
     }
 
     public int getCapacity() {
