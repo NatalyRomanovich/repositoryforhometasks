@@ -4,23 +4,20 @@ import by.nat.homework4.util.GeneratorClients;
 import by.nat.homework4.util.Information;
 
 import java.util.Objects;
-import java.util.concurrent.BlockingQueue;
 
 public class Operator implements Runnable {
 
     private String nameOperator;
     private boolean isSkilled;
     private volatile boolean isBusy;
-    private BlockingQueue<Client> clientsQueue;
 
     public Operator() {
     }
 
-    public Operator(String nameOperator, boolean isSkilled, BlockingQueue<Client> clientsQueue) {
+    public Operator(String nameOperator, boolean isSkilled) {
         this.nameOperator = nameOperator;
         this.isSkilled = isSkilled;
         this.isBusy = false;
-        this.clientsQueue = CallCentre.getClientsQueue();
 
     }
 
@@ -31,7 +28,7 @@ public class Operator implements Runnable {
 
         while (true) {
             try {
-                Client clientServedQueue = clientsQueue.take();
+                Client clientServedQueue = CallCentre.getClientsQueue().take();
 
                 if (isEndingWork(clientServedQueue)) {
                     System.out.println(getNameOperator() + " finished work");
@@ -138,14 +135,6 @@ public class Operator implements Runnable {
         isBusy = busy;
     }
 
-    public BlockingQueue<Client> getClientsQueue() {
-        return clientsQueue;
-    }
-
-    public void setClientsQueue(BlockingQueue<Client> clientsQueue) {
-        this.clientsQueue = clientsQueue;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -153,13 +142,12 @@ public class Operator implements Runnable {
         Operator operator = (Operator) o;
         return isSkilled == operator.isSkilled &&
                 isBusy == operator.isBusy &&
-                Objects.equals(nameOperator, operator.nameOperator) &&
-                Objects.equals(clientsQueue, operator.clientsQueue);
+                Objects.equals(nameOperator, operator.nameOperator);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nameOperator, isSkilled, isBusy, clientsQueue);
+        return Objects.hash(nameOperator, isSkilled, isBusy);
     }
 
     @Override
@@ -168,7 +156,6 @@ public class Operator implements Runnable {
                 "nameOperator='" + nameOperator + '\'' +
                 ", isSkilled=" + isSkilled +
                 ", isBusy=" + isBusy +
-                ", clientsQueue=" + clientsQueue +
                 '}';
     }
 }
