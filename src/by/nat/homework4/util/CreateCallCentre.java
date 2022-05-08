@@ -1,10 +1,8 @@
 package by.nat.homework4.util;
 
-import by.nat.homework4.demo.CallCentreWork;
 import by.nat.homework4.domain.CallCentre;
 
 import java.util.List;
-import java.util.Random;
 
 public class CreateCallCentre {
 
@@ -22,7 +20,7 @@ public class CreateCallCentre {
         List operatorCallCentreList = GeneratorOperators.createOperatorsList();
         List clientsCallCentreList = GeneratorClients.createClientsList();
 
-       CallCentre callCentre = new CallCentre(Information.getInformation(FILE_NAME_CALL_CENTRE, CALL_CENTRE_CAPACITY),
+        CallCentre callCentre = new CallCentre(Information.getInformation(FILE_NAME_CALL_CENTRE, CALL_CENTRE_CAPACITY),
                 Information.getInformation(FILE_NAME_CALL_CENTRE, OPERATORS_NUMBER),
                 operatorCallCentreList,
                 clientsCallCentreList);
