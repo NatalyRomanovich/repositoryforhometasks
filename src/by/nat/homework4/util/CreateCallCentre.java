@@ -22,13 +22,13 @@ public class CreateCallCentre {
         List operatorCallCentreList = GeneratorOperators.createOperatorsList();
         List clientsCallCentreList = GeneratorClients.createClientsList();
 
-        CallCentre callcentre = new CallCentre(Information.getInformation(FILE_NAME_CALL_CENTRE, CALL_CENTRE_CAPACITY),
+        CallCentre callCentre = new CallCentre(Information.getInformation(FILE_NAME_CALL_CENTRE, CALL_CENTRE_CAPACITY),
                 Information.getInformation(FILE_NAME_CALL_CENTRE, OPERATORS_NUMBER),
                 operatorCallCentreList,
                 clientsCallCentreList,
                 CallCentreWork.clientsQueue);
 
-        return callcentre;
+        return callCentre;
     }
 
     //create random call time between customer calls
