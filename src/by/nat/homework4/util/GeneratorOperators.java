@@ -46,7 +46,7 @@ public class GeneratorOperators {
         int minPointSkills = 1;
         int testPoint = 4;
 
-        int operatorsSkill = new Random().nextInt(maxPointSkills - minPointSkills) + minPointSkills;
+        int operatorsSkill = new Random().nextInt((maxPointSkills - minPointSkills) + 1) + minPointSkills;
 
         if (operatorsSkill < testPoint) {
             skill = false;
