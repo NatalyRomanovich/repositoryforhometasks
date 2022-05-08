@@ -1,18 +1,12 @@
-
 package by.nat.homework4.demo;
 
 import by.nat.homework4.domain.CallCentre;
-import by.nat.homework4.domain.Client;
 import by.nat.homework4.util.CreateCallCentre;
 import by.nat.homework4.util.CreateThreads;
-import by.nat.homework4.util.Information;
-
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
 
 
 public class CallCentreWork {
- 
+
     public static void main(String[] args) {
         CallCentre callCentre = CreateCallCentre.createCallCentre();
 
@@ -26,6 +20,3 @@ public class CallCentreWork {
         System.out.println("Call center closes");
     }
 }
-
-
-
