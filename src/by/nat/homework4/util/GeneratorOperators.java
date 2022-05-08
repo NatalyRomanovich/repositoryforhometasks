@@ -30,8 +30,7 @@ public class GeneratorOperators {
 
         String[] operatorsNamesList = Information.getInformation(OPERATORS_NAMES_KEY);
 
-        Operator operator = new Operator(operatorsNamesList[operatorsIndex], isOperatorSkilled(),
-                CallCentreWork.clientsQueue);
+        Operator operator = new Operator(operatorsNamesList[operatorsIndex], isOperatorSkilled());
 
         return operator;
     }
