@@ -13,10 +13,7 @@ import java.util.concurrent.BlockingQueue;
 
 public class CallCentreWork {
 
-    public static BlockingQueue<Client> clientsQueue =
-            new ArrayBlockingQueue<>(Information.getInformation
-                    (CreateCallCentre.FILE_NAME_CALL_CENTRE, CreateCallCentre.OPERATORS_NUMBER));
-
+ 
     public static void main(String[] args) {
         CallCentre callCentre = CreateCallCentre.createCallCentre();
 
