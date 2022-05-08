@@ -20,7 +20,7 @@ public class Operator implements Runnable {
         this.nameOperator = nameOperator;
         this.isSkilled = isSkilled;
         this.isBusy = false;
-        this.clientsQueue = clientsQueue;
+        this.clientsQueue = CallCentre.getClientsQueue();
 
     }
 
